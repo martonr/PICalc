@@ -1,0 +1,6 @@
+# Ignore IDEA dirs
+/.idea
+
+# Ignore Gradle dirs
+/build
+

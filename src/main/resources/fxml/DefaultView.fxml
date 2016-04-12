@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane fx:id="mainTabPane" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+         prefWidth="800.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="17.0" tabMaxWidth="140.0"
+         tabMinHeight="17.0" tabMinWidth="140.0" xmlns="http://javafx.com/javafx/8.0.65"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <Tab closable="false" text="Power Index Calculator"/>
+        <Tab closable="false" text="Simulation"/>
+    </tabs>
+</TabPane>
