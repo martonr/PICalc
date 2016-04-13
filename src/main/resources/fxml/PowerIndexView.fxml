@@ -71,7 +71,7 @@
                             </VBox.margin>
                         </Label>
                         <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" prefHeight="20.0"
-                               prefWidth="20.0" text="1.0">
+                               prefWidth="20.0" text="1.01">
                             <VBox.margin>
                                 <Insets top="5.0"/>
                             </VBox.margin>
