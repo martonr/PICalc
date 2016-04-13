@@ -255,7 +255,7 @@ public final class ControlPowerIndexView {
         try {
             String s = field.getText();
             if ( s.isEmpty() )
-                return 0;
+                return -1;
             int v = Integer.parseInt( s );
             if ( v < 1 ) {
                 errorTextField( field, "Minimum is 1" );
@@ -264,13 +264,15 @@ public final class ControlPowerIndexView {
             return v;
         } catch ( NumberFormatException e ) {
             errorTextField( field, "Must be an integer!" );
-            return -2;
+            return -1;
         }
     }
 
     private void addNewPlayer() {
         String name = parseName().isEmpty() ? "P" : parseName();
         int vote = parseNumber( playerVote );
+        if ( vote < 0 )
+            return;
         playerTable.getItems().add( new ContainerPlayer( name, vote ) );
         resetTextField( playerName, "Name" );
         resetTextField( playerVote, "Vote" );
@@ -288,9 +290,9 @@ public final class ControlPowerIndexView {
         int quota = parseNumber( quotaValue );
         int simV = parseNumber( simValue );
 
-        if ( quota < 1 )
+        if ( quota < 0 )
             error = errorTextField( quotaValue, "Minimum is 1" );
-        if ( !simValue.isDisabled() && simV < 1 )
+        if ( !simValue.isDisabled() && simV < 0 )
             error = errorTextField( simValue, "Minimum is 1" );
         if ( error )
             return;

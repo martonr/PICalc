@@ -287,7 +287,7 @@ public final class ControlSimulation {
         try {
             String s = field.getText();
             if ( s.isEmpty() )
-                return 0;
+                return -1;
             int v = Integer.parseInt( s );
             if ( v < 1 ) {
                 errorTextField( field, "Minimum is 1" );
@@ -296,7 +296,7 @@ public final class ControlSimulation {
             return v;
         } catch ( NumberFormatException e ) {
             errorTextField( field, "Must be an integer!" );
-            return -2;
+            return -1;
         }
     }
 
@@ -309,17 +309,17 @@ public final class ControlSimulation {
         int sSC = parseNumber( scenarioSim );
         int vSC = parseNumber( valueSim );
 
-        if ( pCount < 1 )
+        if ( pCount < 0 )
             error = errorTextField( playerCount, "Minimum is 1" );
-        if ( tVote < 1 )
+        if ( tVote < 0 )
             error = errorTextField( totalVote, "Minimum is 1" );
-        if ( q1 < 1 )
+        if ( q1 < 0 )
             error = errorTextField( firstQuota, "Minimum is 1" );
-        if ( q2 < 1 )
+        if ( q2 < 0 )
             error = errorTextField( secondQuota, "Minimum is 1" );
-        if ( sSC < 1 )
+        if ( sSC < 0 )
             error = errorTextField( scenarioSim, "Minimum is 1" );
-        if ( !valueSim.isDisabled() && vSC < 1 )
+        if ( !valueSim.isDisabled() && vSC < 0 )
             error = errorTextField( valueSim, "Minimum is 1" );
         if ( error )
             return;

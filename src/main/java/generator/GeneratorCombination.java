@@ -59,12 +59,12 @@ public final class GeneratorCombination extends GeneratorAbstract {
      * @return - integer array representing a combination
      */
     @Override
-    public int[] getNext() { return getNext( 0 ); }
+    public int[] getNext() { return getNext( -1 ); }
 
     /**
      * Returns a combination, if all possible combinations were returned, returns null.
      *
-     * @param p - this player is always part of the combination
+     * @param p - this player is always part of the combination, if <0 empty combinations are also returned
      * @return - integer array representing a combination
      */
     @Override
@@ -94,7 +94,8 @@ public final class GeneratorCombination extends GeneratorAbstract {
                     randomCombination.set( i );
                 }
             }
-            randomCombination.set( p );
+            if ( p >= 0 )
+                randomCombination.set( p );
             combinationSize = randomCombination.cardinality();
             combination = new int[ combinationSize ];
 
