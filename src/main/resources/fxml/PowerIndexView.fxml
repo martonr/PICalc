@@ -19,40 +19,31 @@
             <children>
                 <VBox prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false"
-                               maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                               opacity="0.5" prefHeight="20.0" prefWidth="70.0" text="Add a player:"
-                               textAlignment="CENTER">
+                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.5" prefHeight="20.0" prefWidth="70.0" text="Add a player:" textAlignment="CENTER">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="30.0" top="15.0"/>
+                                <Insets bottom="10.0" left="30.0" top="15.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField fx:id="playerName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                   minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Name">
+                        <TextField fx:id="playerName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Name">
                             <VBox.margin>
-                                <Insets bottom="5.0" left="30.0"/>
+                                <Insets bottom="5.0" left="30.0" />
                             </VBox.margin>
                         </TextField>
-                        <TextField fx:id="playerVote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                   minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Votes">
+                        <TextField fx:id="playerVote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Votes">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="30.0"/>
+                                <Insets bottom="10.0" left="30.0" />
                             </VBox.margin>
                         </TextField>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="addPlayer" maxHeight="-Infinity" maxWidth="-Infinity"
-                                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="40.0" text="Add">
+                                <Button fx:id="addPlayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Add">
                                     <HBox.margin>
-                                        <Insets left="30.0"/>
+                                        <Insets left="30.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="removePlayer" maxHeight="-Infinity" maxWidth="-Infinity"
-                                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="60.0" text="Remove">
+                                <Button fx:id="removePlayer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="40.0"/>
+                                        <Insets left="40.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
@@ -61,115 +52,101 @@
                 </VBox>
                 <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" prefHeight="20.0"
-                               prefWidth="160.0" text="Power Index Calculator" textAlignment="CENTER" underline="true">
+                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" prefHeight="20.0" prefWidth="160.0" text="Power Index Calculator" textAlignment="CENTER" underline="true">
                             <font>
-                                <Font name="System Bold" size="14.0"/>
+                                <Font name="System Bold" size="14.0" />
                             </font>
                             <VBox.margin>
-                                <Insets top="50.0"/>
+                                <Insets top="50.0" />
                             </VBox.margin>
                         </Label>
-                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" prefHeight="20.0"
-                               prefWidth="20.0" text="1.01">
+                        <Label fx:id="versionNumber" alignment="CENTER" contentDisplay="TEXT_ONLY" focusTraversable="false" text="1.01">
                             <VBox.margin>
-                                <Insets top="5.0"/>
+                                <Insets top="5.0" />
                             </VBox.margin>
                         </Label>
-                        <ProgressBar fx:id="computationProgress" focusTraversable="false" opacity="0.5"
-                                     prefHeight="10.0" prefWidth="130.0">
+                        <ProgressBar fx:id="computationProgress" focusTraversable="false" opacity="0.5" prefHeight="10.0" prefWidth="130.0">
                             <VBox.margin>
-                                <Insets bottom="5.0" top="10.0"/>
+                                <Insets bottom="5.0" top="10.0" />
                             </VBox.margin>
                         </ProgressBar>
-                        <Label fx:id="timeMeasure" focusTraversable="false" opacity="0.5" text="Finished in:"/>
+                        <Label fx:id="timeMeasure" focusTraversable="false" opacity="0.5" text="Finished in:" />
                     </children>
                 </VBox>
                 <VBox alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
                         <HBox alignment="TOP_RIGHT" prefHeight="20.0">
                             <children>
-                                <RadioButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                             minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0"
-                                             prefWidth="50.0" selected="true" text="Exact">
+                                <RadioButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" selected="true" text="Exact">
                                     <toggleGroup>
-                                        <ToggleGroup fx:id="computationType"/>
+                                        <ToggleGroup fx:id="computationType" />
                                     </toggleGroup>
                                     <HBox.margin>
-                                        <Insets right="5.0"/>
+                                        <Insets right="5.0" />
                                     </HBox.margin>
                                 </RadioButton>
-                                <RadioButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                             minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0"
-                                             prefWidth="90.0" text="Monte Carlo" toggleGroup="$computationType">
+                                <RadioButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" text="Monte Carlo" toggleGroup="$computationType">
                                     <HBox.margin>
-                                        <Insets/>
+                                        <Insets />
                                     </HBox.margin>
                                 </RadioButton>
                             </children>
                             <VBox.margin>
-                                <Insets bottom="10.0" right="30.0" top="15.0"/>
+                                <Insets bottom="10.0" right="30.0" top="15.0" />
                             </VBox.margin>
                         </HBox>
-                        <TextField fx:id="quotaValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                   minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Quota">
+                        <TextField fx:id="quotaValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Quota">
                             <VBox.margin>
-                                <Insets bottom="5.0" right="30.0"/>
+                                <Insets bottom="5.0" right="30.0" />
                             </VBox.margin>
                         </TextField>
-                        <TextField fx:id="simValue" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
-                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0"
-                                   promptText="Simulation Count">
+                        <TextField fx:id="simValue" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="Simulation Count">
                             <VBox.margin>
-                                <Insets bottom="10.0" right="30.0"/>
+                                <Insets bottom="10.0" right="30.0" />
                             </VBox.margin>
                         </TextField>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="stopCalculation" focusTraversable="false" maxHeight="-Infinity"
-                                        maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                                        mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="Stop">
+                                <Button fx:id="stopCalculation" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="Stop">
                                     <HBox.margin>
-                                        <Insets right="30.0"/>
+                                        <Insets right="30.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="startCalculation" maxHeight="-Infinity" maxWidth="-Infinity"
-                                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="65.0" text="Calculate">
+                                <Button fx:id="startCalculation" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Calculate">
                                     <HBox.margin>
-                                        <Insets right="30.0"/>
+                                        <Insets right="30.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                             <VBox.margin>
-                                <Insets/>
+                                <Insets />
                             </VBox.margin>
                         </HBox>
                     </children>
                     <HBox.margin>
-                        <Insets/>
+                        <Insets />
                     </HBox.margin>
                 </VBox>
             </children>
             <VBox.margin>
-                <Insets/>
+                <Insets />
             </VBox.margin>
             <padding>
-                <Insets bottom="15.0"/>
+                <Insets bottom="15.0" />
             </padding>
         </HBox>
         <TableView fx:id="playerTable" focusTraversable="false" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn prefWidth="75.0" text="Name"/>
-                <TableColumn prefWidth="75.0" text="Votes"/>
-                <TableColumn prefWidth="75.0" text="Shapley-Shubik"/>
-                <TableColumn prefWidth="75.0" text="Banzhaf"/>
+                <TableColumn prefWidth="75.0" text="Name" />
+                <TableColumn prefWidth="75.0" text="Votes" />
+                <TableColumn prefWidth="75.0" text="Shapley-Shubik" />
+                <TableColumn prefWidth="75.0" text="Banzhaf" />
             </columns>
             <columnResizePolicy>
-                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
             <VBox.margin>
-                <Insets/>
+                <Insets />
             </VBox.margin>
         </TableView>
     </children>

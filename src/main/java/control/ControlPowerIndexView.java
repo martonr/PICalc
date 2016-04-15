@@ -46,6 +46,8 @@ public final class ControlPowerIndexView {
     private Button stopCalculation;
     @FXML
     private Label timeMeasure;
+    @FXML
+    private Label versionNumber;
 
     private final ColorAdjust errorColor = new ColorAdjust( 0.03, 0.05, 0.0, 0.0 );
     private final SimpleBooleanProperty finishedFlag = new SimpleBooleanProperty( true );
@@ -220,6 +222,7 @@ public final class ControlPowerIndexView {
     }
 
     private void initLabels() {
+        versionNumber.setText( "1.01" );
         timeMeasure.setText( "" );
         timeMeasure.setVisible( false );
     }
