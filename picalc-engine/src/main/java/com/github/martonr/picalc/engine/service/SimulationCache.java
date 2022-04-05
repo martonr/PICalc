@@ -3,6 +3,13 @@ package com.github.martonr.picalc.engine.service;
 import java.util.concurrent.atomic.AtomicLong;
 import com.github.martonr.picalc.engine.random.PCGRandom;
 
+/**
+ * This class implements an LRU cache for storing already computed player vote scenarios. It can
+ * save a lot of computation in smaller player count situations.
+ * 
+ * The least-recently used cache is implemented using a hash table and a circular doubly-linked
+ * list.
+ */
 public final class SimulationCache {
 
     private static final int HT_SIZE = 24;
