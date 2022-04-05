@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.martonr.picalc</groupId>
+        <artifactId>picalc-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>com.github.martonr.picalc.engine</groupId>
+    <artifactId>picalc-engine</artifactId>
+    <packaging>jar</packaging>
+
+    <name>picalc-engine</name>
+    <description>PICalc Engine</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>
+                        @{argLine}
+                        --add-opens com.github.martonr.picalc.engine/com.github.martonr.picalc.engine.calculators=ALL-UNNAMED 
+                        --add-opens com.github.martonr.picalc.engine/com.github.martonr.picalc.engine.generators=ALL-UNNAMED 
+                        --add-opens com.github.martonr.picalc.engine/com.github.martonr.picalc.engine.random=ALL-UNNAMED
+                        --add-opens com.github.martonr.picalc.engine/com.github.martonr.picalc.engine.service=ALL-UNNAMED
+                    </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

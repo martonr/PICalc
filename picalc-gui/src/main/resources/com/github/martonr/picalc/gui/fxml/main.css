@@ -1,0 +1,112 @@
+.difference-chart .chart-line-symbol {
+    -fx-background-radius: 3px;
+    -fx-padding: 3px;
+    -fx-shape: "M 9 0 a 10 10 0 1 1 1 0 Z"
+}
+.difference-chart .chart-legend-item-symbol {
+    -fx-background-radius: 3px;
+    -fx-padding: 3px;
+    -fx-shape: "M 9 0 a 10 10 0 1 1 1 0 Z"
+}
+
+.difference-chart .chart-series-line {
+    -fx-stroke-width: 1px;
+    -fx-stroke: transparent, transparent;
+}
+
+.difference-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #03C03C;
+}
+
+.difference-chart .default-color1.chart-line-symbol {
+    -fx-background-color: #E23D28;
+}
+
+.difference-chart .default-color2.chart-line-symbol {
+    -fx-background-color: #89CFF0;
+}
+
+.difference-chart .default-color3.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.difference-chart .default-color3.chart-series-line {
+    -fx-stroke: #919191, #919191;
+}
+
+.difference-chart .default-color4.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.difference-chart .default-color4.chart-series-line {
+    -fx-stroke: #919191, #919191;
+}
+
+.difference-chart .default-color5.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.difference-chart .default-color5.chart-series-line {
+    -fx-stroke: #919191, #919191;
+}
+
+.mean-chart .chart-line-symbol {
+    -fx-background-radius: 3px;
+    -fx-padding: 3px;
+    -fx-shape: "M 9 0 a 10 10 0 1 1 1 0 Z"
+}
+
+.mean-chart .chart-legend-item-symbol {
+    -fx-background-radius: 3px;
+    -fx-padding: 3px;
+    -fx-shape: "M 9 0 a 10 10 0 1 1 1 0 Z"
+}
+
+.mean-chart .chart-series-line {
+    -fx-stroke-width: 1px;
+    -fx-stroke: transparent, transparent;
+}
+
+.mean-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #03C03C;
+}
+
+.mean-chart .default-color1.chart-line-symbol {
+    -fx-background-color: #E23D28;
+}
+
+.mean-chart .default-color2.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.mean-chart .default-color2.chart-legend-item-symbol {
+    -fx-background-color: #919191, #919191;
+}
+
+.mean-chart .default-color2.chart-series-line {
+    -fx-stroke: #919191, #919191;
+}
+
+.stdev-chart .chart-line-symbol {
+    -fx-background-radius: 3px;
+    -fx-padding: 3px;
+    -fx-shape: "M 9 0 a 10 10 0 1 1 1 0 Z"
+}
+
+.stdev-chart .chart-series-line {
+    -fx-stroke-width: 1px;
+    -fx-stroke: transparent, transparent;
+}
+
+.stdev-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #03C03C;
+}
+
+.stdev-chart .default-color1.chart-line-symbol {
+    -fx-background-color: #E23D28;
+}
+
+.main-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}

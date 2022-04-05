@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import java.net.URL?>
+<TabPane xmlns:fx="http://javafx.com/fxml/1" fx:id="tabPane" prefHeight="640.0" prefWidth="900.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" tabMaxHeight="16.0" xmlns="http://javafx.com/javafx/17" fx:controller="com.github.martonr.picalc.gui.controller.ControllerMain">
+    <tabs>
+        <Tab fx:id="powerIndexTab" closable="false" text="Power Index" />
+        <Tab fx:id="quotaDifferenceTab" closable="false" text="Quota Difference" />
+        <Tab fx:id="dpiTab" closable="false" text="DPI Calculation" />
+        <Tab fx:id="dpiDifferenceTab" closable="false" text="DPI Difference" />
+    </tabs>
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+</TabPane>

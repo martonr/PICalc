@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.github.martonr.picalc.gui.controller.SimulationChart?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11" fx:controller="com.github.martonr.picalc.gui.controller.ControllerSimulationDpi">
+    <children>
+        <HBox maxHeight="180.0" VBox.vgrow="SOMETIMES">
+            <children>
+                <VBox alignment="TOP_LEFT" spacing="5.0" HBox.hgrow="SOMETIMES">
+                    <children>
+                        <Label text="Simulation parameters:" opacity="0.5" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <TextField fx:id="playerCountText" promptText="Number of players" focusTraversable="false" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <TextField fx:id="votesText" promptText="Total votes" focusTraversable="false" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <TextField fx:id="quotaText" promptText="Quota" focusTraversable="false" />
+                                <CheckBox fx:id="quotaCheck" mnemonicParsing="false" text="Restrict" focusTraversable="false" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="50.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="TOP_CENTER" spacing="20.0" HBox.hgrow="SOMETIMES">
+                    <children>
+                        <Label styleClass="main-label" text="DPI Effect Simulation" />
+                        <ProgressIndicator fx:id="progressCircle" maxHeight="30.0" maxWidth="30.0" minHeight="20.0" minWidth="20.0" prefHeight="25.0" prefWidth="25.0" visible="false" />
+                        <Label fx:id="progressText" text="v1.0" />
+                        <Button fx:id="saveResultsButton" mnemonicParsing="false" text="Save Results" onAction="#saveSimulationResultsToDisk" focusTraversable="false" visible="false" disable="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="100.0" top="30.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="TOP_RIGHT" spacing="5.0" HBox.hgrow="SOMETIMES">
+                    <children>
+                        <HBox>
+                            <children>
+                                <HBox alignment="CENTER_LEFT" HBox.hgrow="SOMETIMES">
+                                    <children>
+                                        <RadioButton fx:id="exactSelect" mnemonicParsing="false" selected="true" text="Exact">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="computationType" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="SOMETIMES">
+                                    <children>
+                                        <RadioButton fx:id="estimateSelect" mnemonicParsing="false" text="Monte-Carlo" toggleGroup="$computationType" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <VBox alignment="TOP_LEFT" spacing="5.0" HBox.hgrow="SOMETIMES">
+                            <TextField fx:id="simulationText" promptText="Simulations per scenario" focusTraversable="false" />
+                            <TextField fx:id="epsilonText" promptText="Error tolerance" focusTraversable="false" />
+                            <TextField fx:id="countText" promptText="Estimations per scenario" focusTraversable="false" disable="true" />
+                        </VBox>
+                        <HBox spacing="10.0">
+                            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <CheckBox fx:id="limitCheck" mnemonicParsing="false" text="Only until quota" focusTraversable="false" selected="true" />
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" maxWidth="75.0">
+                                <TextField fx:id="setVoteText" promptText="Set vote" focusTraversable="false" />
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="SOMETIMES">
+                                    <children>
+                                        <Button fx:id="simulateButton" mnemonicParsing="false" text="Simulate" onAction="#startSimulation" focusTraversable="false" />
+                                        <Button fx:id="generateButton" mnemonicParsing="false" text="Generate" onAction="#generateScenarioData" focusTraversable="false" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="SOMETIMES">
+                                    <children>
+                                        <Button fx:id="stopButton" mnemonicParsing="false" text="Stop" onAction="#stopSimulation" focusTraversable="false" disable="true" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <TabPane tabClosingPolicy="UNAVAILABLE" tabMaxHeight="16.0" VBox.vgrow="SOMETIMES">
+            <tabs>
+                <Tab text="Shapley probabilities">
+                    <content>
+                        <SimulationChart styleClass="difference-chart" fx:id="shapleyProbabilityChart" animated="false" HBox.hgrow="SOMETIMES">
+                            <xAxis>
+                                <NumberAxis tickUnit="10.0" label="votes" autoRanging="false" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis upperBound="1.0" tickUnit="0.1" label="probability" autoRanging="false" side="LEFT" />
+                            </yAxis>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </SimulationChart>
+                    </content>
+                </Tab>
+                <Tab text="Banzhaf probabilities">
+                    <content>
+                        <SimulationChart styleClass="difference-chart" fx:id="banzhafProbabilityChart" animated="false" HBox.hgrow="SOMETIMES">
+                            <xAxis>
+                                <NumberAxis tickUnit="10.0" label="votes" autoRanging="false" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis upperBound="1.0" tickUnit="0.1" label="probability" autoRanging="false" side="LEFT" />
+                            </yAxis>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </SimulationChart>
+                    </content>
+                </Tab>
+                <Tab text="Difference means">
+                    <content>
+                        <SimulationChart styleClass="mean-chart" fx:id="meanChart" animated="false" HBox.hgrow="SOMETIMES">
+                            <xAxis>
+                                <NumberAxis tickUnit="10.0" label="votes" autoRanging="false" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis upperBound="1.0" tickUnit="0.1" label="mean" autoRanging="false" side="LEFT" />
+                            </yAxis>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </SimulationChart>
+                    </content>
+                </Tab>
+                <Tab text="Difference stdev">
+                    <content>
+                        <SimulationChart styleClass="stdev-chart" fx:id="stdevChart" animated="false" HBox.hgrow="SOMETIMES">
+                            <xAxis>
+                                <NumberAxis tickUnit="10.0" label="votes" autoRanging="false" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis upperBound="1.0" tickUnit="0.1" label="stdev" autoRanging="false" side="LEFT" />
+                            </yAxis>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </SimulationChart>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

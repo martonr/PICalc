@@ -1,0 +1,13 @@
+# Ignore logs, debug txt files
+.jvm/
+.vscode/
+.settings/
+logs/
+results/
+*.txt
+*.json
+.classpath
+.project
+
+# Maven dirs
+target/
