@@ -8,7 +8,7 @@ and the [Banzhaf](https://en.wikipedia.org/wiki/Banzhaf_power_index) power indic
 You can calculate the indices using the classical definitions or use a
 [Monte-Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method) to estimate the values.
 
-![Classic power index calculator](https://github.com/martonr/PICalc/blob/master/img/picalc_main.png)
+![Classic power index calculator](https://github.com/martonr/PICalc/blob/main/img/picalc_main.png)
 
 Using the latter is essential for large number of participants as calculating the Shapley-Shubik
 index can become computationally expensive as the number of players increase.
@@ -20,7 +20,7 @@ on the power index for a given vote count.
 The simulation assumes that every vote distribution is equally likely, generates random scenarios and
 calculates the difference in the Shapley-Shubik and Banzhaf indices.
 
-![Simulation](https://github.com/martonr/PICalc/blob/master/img/picalc_sim.png)
+![Simulation](https://github.com/martonr/PICalc/blob/main/img/picalc_sim.png)
 
 The created plots show how likely is that the vote change results in positive, negative or zero change
 in the power index of a player having a specific vote count.
